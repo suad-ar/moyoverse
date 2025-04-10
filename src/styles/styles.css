@@ -1,0 +1,91 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Default font */
+  background-color: #0a0a0a; /* Black background */
+  color: #fff; /* White text */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #006eff; /* Futuristic blue */
+}
+
+h2, h3 {
+  font-size: 2rem;
+  color: #9b5de5; /* Futuristic purple */
+}
+
+a {
+  text-decoration: none;
+  color: #00c6ff;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #9b5de5;
+}
+
+/* HomePage styling */
+.home-page {
+  text-align: center;
+  padding: 50px;
+}
+
+.home-page button {
+  padding: 15px 30px;
+  background-color: #9b5de5; /* Purple button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.home-page button:hover {
+  background-color: #00c6ff; /* Blue button on hover */
+}
+
+/* GamePage styling */
+.game-page {
+  text-align: center;
+  padding: 50px;
+}
+
+.game-page h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.game-page p {
+  font-size: 1.5rem;
+  color: #a0a0a0;
+}
+.game-page button {
+    padding: 15px 30px;
+    background-color: #9b5de5; /* Purple button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+  
+.game-page button:hover {
+    background-color: #00c6ff; /* Blue button on hover */
+}
