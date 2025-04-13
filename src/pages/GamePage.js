@@ -11,15 +11,17 @@ const GamePage = () => {
             <div className="game-tiles">
                 <div className="game-tile">
                     <img src="/images/fool.jpg" alt="Tic Tac Toe" className="game-image" />
-                    <h3>Tic Tac Toe</h3>
+                    <h3>TicTacToe</h3>
                     <Link to="/game/tictactoe">
                         <button className="play-button">Play</button>
                     </Link>
                 </div>
                 <div className="game-tile coming-soon">
-                    <img src="/images/money.jpg" alt="Coming Soon" className="game-image" />
-                    <h3>Tic Tac Two</h3>
-                    <button disabled className="play-button">Coming Soon</button>
+                    <img src="/images/money.jpg" alt="Trifecta" className="game-image" />
+                    <h3>Tri-fecta</h3>
+                    <Link to="/game/trifecta">
+                        <button className="play-button">Play</button>
+                    </Link>
                 </div>
             </div>
             <Link to="/">

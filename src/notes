@@ -1,22 +1,82 @@
-import './App.css';
+ <!--<button disabled className="play-button">Coming Soon</button>
 
-function App() {
+ import React, { useState } from "react";
+import "./TrifectaGame.css";
+import easyRounds from "./rounds/EasyRounds";
+
+const Trifecta = () => {
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
+  const round = easyRounds[currentRoundIndex];
+
+  const handleSubmit = () => {
+    // Add answer checking logic here
+    alert(round.commonality);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="trifecta">
+      <h2>{round.theme}</h2>
+      <div className="grid">
+        {round.tiles.map((tile, index) => (
+          <div key={index} className="tile">
+            <img src={`/images/flags/${tile}.png`} alt={tile} />
+          </div>
+        ))}
+      </div>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
-}
+};
+
+export default Trifecta;
+
+
+const handleSubmit = () => {
+    const selectedFlags = selected.map((i) => currentRound.tiles[i]);
+    const match = currentRound.answer.every((flag) => selectedFlags.includes(flag)) &&
+                  selectedFlags.every((flag) => currentRound.answer.includes(flag));
+
+    if (match) {
+      setMessage(currentRound.commonality); // Show the answer only after correct match
+    } else {
+      setMessage("Try again!");
+    }
+  };
+
+   const renderSquare = (i) => {
+    const isWinningSquare = winnerInfo.line.includes(i);
+    return (
+      <div
+        key={i}
+        className={`square ${isWinningSquare ? 'sparkle' : ''}`}
+        onClick={() => handleClick(i)}
+      >
+        {board[i]}
+      </div>
+    );
+  };
+
+  {gameCompleted && (<button className="nav-btn" onClick={handleNextRound}> ➡️ Refresh </button>)}
+
+
+  [winnerInfo, setWinnerInfo]
+  
+  const handleNextRound = () => {
+    if (currentRoundIndex < easyRounds.length - 1) {
+      setCurrentRoundIndex(currentRoundIndex + 1);
+      setSelected([]);
+      setMessage('');
+      setAttempts(0);
+      setGameCompleted(false);
+    } else {
+      setMessage("🎉 You've completed all rounds!");
+    }
+  };
+
+  if (!winData && !newBoard.includes(null)) {
+      // It's a draw!
+      const boardEl = document.querySelector(".board");
+      if (boardEl) {
+        boardEl.classList.add("jolt");
+        setTimeout(() => boardEl.classList.remove("jolt"), 500);
+      }
