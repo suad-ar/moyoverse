@@ -6,9 +6,12 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Default font */
-  background-color: #0a0a0a; /* Black background */
-  color: #fff; /* White text */
+  font-family: 'Poppins', sans-serif;
+  /* Default font */
+  background-color: #0a0a0a;
+  /* Black background */
+  color: #fff;
+  /* White text */
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,19 +19,74 @@ body {
   flex-direction: column;
 }
 
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  /* Montserrat for headings */
   font-weight: 600;
 }
 
 h1 {
   font-size: 3rem;
-  color: #006eff; /* Futuristic blue */
+  color: #006eff;
+  /* Futuristic blue */
 }
 
-h2, h3 {
-  font-size: 2rem;
-  color: #9b5de5; /* Futuristic purple */
+h2,
+h3 {
+  font-size: 1.8rem;
+  color: #9b5de5;
+  /* Futuristic purple */
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 2.5rem;
+    /* Reduce font size */
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+    /* Reduce font size */
+    margin-bottom: 0.2rem;
+    /* Reduce space between title and content */
+  }
+  
+
+ 
+
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 2.0rem;
+    /* Reduce font size */
+  }
+
+  h2,
+  h3 {
+    font-size: 1.0rem;
+    /* Reduce font size */
+    margin-bottom: 0.1rem;
+    /* Reduce space between title and content */
+  }
+
+}
+
+ 
+@media only screen and (max-width: 350px) {
+  h3 {
+    font-size: 0.5rem;
+    /* Reduce font size */
+    margin-bottom: 0.1rem;
+    /* Reduce space between title and content */
+  }
+  
+  
+
+
 }
 
 a {
@@ -49,7 +107,8 @@ a:hover {
 
 .home-page button {
   padding: 15px 30px;
-  background-color: #9b5de5; /* Purple button */
+  background-color: #9b5de5;
+  /* Purple button */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -58,7 +117,8 @@ a:hover {
 }
 
 .home-page button:hover {
-  background-color: #00c6ff; /* Blue button on hover */
+  background-color: #00c6ff;
+  /* Blue button on hover */
 }
 
 /* GamePage styling */
@@ -68,24 +128,37 @@ a:hover {
 }
 
 .game-page h2 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   margin-bottom: 20px;
+  color: #9b5de5;;
 }
 
 .game-page p {
   font-size: 1.5rem;
   color: #a0a0a0;
 }
+
 .game-page button {
-    padding: 15px 30px;
-    background-color: #9b5de5; /* Purple button */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
+  padding: 8px 25px;
+  background-color: #9b5de5;
+  /* Purple button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
-  
+
 .game-page button:hover {
-    background-color: #00c6ff; /* Blue button on hover */
+  background-color: #00c6ff;
+  /* Blue button on hover */
+}
+
+@media only screen and (max-width: 500px) {
+  .game-page button {
+    padding: 5px 18px;
+    font-size: 0.5rem;
+  }
+
+
 }

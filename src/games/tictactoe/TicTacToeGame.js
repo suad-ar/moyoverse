@@ -7,8 +7,17 @@ import { Link } from 'react-router-dom';
 const affirmations = [
   "It is not sufficient that i succeed - all others must fail.💫",
   "The man who sleeps with a machete is a fool every night, but one.🧠",
-  "No matter how hot your anger is, it cannot cook yams 🔥",
-  "Plenty talking cannot let a dead man hear you 🚀"
+  "No matter how hot your anger is, it cannot cook yams. 🔥",
+  "Plenty talking cannot let a dead man hear you. 🚀",
+  "No matter how far an eagle flies up the sky ,it will definitely come down to look for food.🦅 ",
+  "You cannot convince a monkey that honey is sweeter than banana.🍌 ",
+  "When the mouse laughs at the cat, there is a hole nearby.🕳️",
+  "It requires a lot of carefulness to kill the fly that perches on the scrotum.🪰",
+  "The monkey who tries to see the hunter clearly collects bullets in its eyes.🐒",
+  "He who sleeps with itchy anus will wake up with smelly fingers.🖐🏾",
+  "Nobody can prepare for the harmattan by drinking plenty of water.💧",
+  "Even if the cock does not crow, the sun will rise. 🐓",
+  "A single bracelet does not jingle.💎"
 ];
 
 const TicTacToeGame = () => {
@@ -31,8 +40,10 @@ const TicTacToeGame = () => {
     const winData = calculateWinner(newBoard);
     if (winData) {
       setWinnerInfo(winData);
-      setAffirmation(affirmations[Math.floor(Math.random() * affirmations.length)]);
-      setShowAffirmation(true);
+  
+        setAffirmation(affirmations[Math.floor(Math.random() * affirmations.length)]);
+        setShowAffirmation(true);
+      
     } else {
       setXIsNext(!xIsNext);
     }
@@ -137,6 +148,7 @@ const TicTacToeGame = () => {
 
   return (
     <div className="tic-tac-toe">
+      <h1>Match and Motivate</h1>
 
       <h2>{winnerInfo.winner ? `Winner: ${winnerInfo.winner}` : `Turn: ${xIsNext ? 'X' : 'O'}`}</h2>
       <div className="board">
@@ -146,7 +158,13 @@ const TicTacToeGame = () => {
       {showAffirmation && (
         <div className="affirmation-popup">
           <p>{affirmation}</p>
-          <button onClick={resetGame}>Play Again</button>
+          
+          <div className="button-group">
+      <button onClick={resetGame}>Play Again</button>
+      <Link to="/game">
+        <button>Back</button>
+      </Link>
+    </div>
         </div>
       )}
       {!winnerInfo.winner && !isDraw && (

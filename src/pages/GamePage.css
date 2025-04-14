@@ -7,6 +7,8 @@
     min-height: 100vh;
 }
 
+
+
 h1 {
     font-size: 3rem;
     color: #006eff;
@@ -18,46 +20,111 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.game-tiles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    h2 {
+        font-size: 0.5rem; /* Reduce font size */
+        margin-bottom: 1rem; /* Reduce space between title and content */
+    }
+
+    .game-page {
+        text-align: center;
+        padding-top: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        background: linear-gradient(145deg, #0f0f2c, #1e0039);
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
 }
 
+.game-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .game-tile {
+    aspect-ratio: 1 / 1;
+    overflow: hidden; /* Prevent text from pushing the height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid #4f46e5;
     border-radius: 16px;
-    padding: 1rem;
-    
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
     transition: transform 0.2s ease;
+    text-align: center;
 }
+
+.game-tile p {
+    font-size: 0.8rem;
+    color: white;
+    margin: 0;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+}
+
+
 
 .game-tile:hover {
     transform: scale(1.05);
 }
 
 .game-image {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 12px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .game-image {
+        width: 50px;
+        
+    }
+
+    .game-tiles {
+        gap: 1rem;
+    }
+
+    .game-tile {
+        padding: 0.3rem;
+    }
+
 }
 
 
+@media only screen and (max-width: 400px) {
+    .game-image {
+        width: 40px;
+        
+    }
 
-.play-button {
-    background: #4f46e5;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 12px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    .game-tiles {
+        gap: 1rem;
+    }
+
+    .game-tile {
+        padding: 0.3rem;
+    }
+
 }
 
 .play-button:hover {
@@ -78,3 +145,4 @@ h2 {
 .back-button:hover {
     background: #38bdf8;
 }
+

@@ -27,15 +27,15 @@ const Trifecta = () => {
   const handleSubmit = () => {
     const selectedFlags = selected.map((i) => currentRound.tiles[i]);
     const match = currentRound.answer.every((flag) => selectedFlags.includes(flag)) &&
-                  selectedFlags.every((flag) => currentRound.answer.includes(flag));
-  
+      selectedFlags.every((flag) => currentRound.answer.includes(flag));
+
     if (match) {
       setMessage(currentRound.commonality); // Show the fun fact / answer
       setGameCompleted(true); // Allow moving to the next round
     } else {
       const nextAttempt = attempts + 1;
       setAttempts(nextAttempt);
-  
+
       if (nextAttempt >= maxAttempts) {
         setMessage("No more attempts left!");
         setGameCompleted(true); // Optionally disable the game
@@ -57,7 +57,7 @@ const Trifecta = () => {
     }
   };
 
- 
+
 
   return (
     <div className="trifecta-container">
@@ -77,14 +77,14 @@ const Trifecta = () => {
       {message && <div className="result-message">{message}</div>}
       <div className="navigation-buttons">
         <Link to="/">
-          <button className="nav-btn">🏠 Home</button>
+          <button className="nav-btn"> Home</button>
         </Link>
         <Link to="/game">
-          <button className="nav-btn">🎮 Game Page</button>
+          <button className="nav-btn">Game Page</button>
         </Link>
-        {gameCompleted && (<button className="nav-btn" onClick={handleNextRound}> ➡️ Next Round </button>)}
+        {gameCompleted && (<button className="nav-btn" onClick={handleNextRound}>  Next Round </button>)}
       </div>
-      
+
     </div>
 
   );
