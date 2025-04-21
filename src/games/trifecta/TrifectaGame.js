@@ -1,12 +1,14 @@
-
-
-// Trifecta.js
 import React, { useState } from 'react';
 import './TrifectaGame.css';
 import easyRounds from "./rounds/EasyRounds";
 import { Link } from 'react-router-dom';
+import useTimeOnPage from '../../hooks/useTimeOnPage';
+import { useEffect } from 'react';
+
 
 const Trifecta = () => {
+  useTimeOnPage('time_on_trifecta');
+
   const [selected, setSelected] = useState([]);
   const [message, setMessage] = useState('');
   const [attempts, setAttempts] = useState(0);
@@ -28,6 +30,14 @@ const Trifecta = () => {
     const selectedFlags = selected.map((i) => currentRound.tiles[i]);
     const match = currentRound.answer.every((flag) => selectedFlags.includes(flag)) &&
       selectedFlags.every((flag) => currentRound.answer.includes(flag));
+
+      window.plausible("match_submitted", {
+        props: {
+          game: "Trifecta",
+          correct: true, // or false based on your logic
+          round: "two-color-flags", // optional
+        },
+      });
 
     if (match) {
       setMessage(currentRound.commonality); // Show the fun fact / answer
@@ -57,6 +67,11 @@ const Trifecta = () => {
     }
   };
 
+  useEffect(() => {
+    window.plausible?.("game_played", { props: { name: "Trifecta" } });
+  }, []);
+
+  
 
 
   return (

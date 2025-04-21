@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './GamePage.css';
+import useTimeOnPage from '../hooks/useTimeOnPage';
 
 
 const GamePage = () => {
+    useTimeOnPage('time_on_gamepage');
     return (
         <div className="game-page">
             <h1>Game Page</h1>

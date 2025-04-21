@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './TicTacToeGame.css';
 import { Link } from 'react-router-dom';
+import useTimeOnPage from '../../hooks/useTimeOnPage';
 
 
 
@@ -21,6 +22,8 @@ const affirmations = [
 ];
 
 const TicTacToeGame = () => {
+  useTimeOnPage('time_on_tictactoe');
+
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const [winnerInfo, setWinnerInfo] = useState({ winner: null, line: [] });
@@ -143,6 +146,10 @@ const TicTacToeGame = () => {
       makeAIMove();
     }
   }, [xIsNext, makeAIMove]); // Watch for changes in xIsNext and makeAIMove
+
+  useEffect(() => {
+    window.plausible?.("game_played", { props: { name: "TicTacToe" } });
+  }, []);
 
 
 
