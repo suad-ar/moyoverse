@@ -35,7 +35,7 @@ const Trifecta = () => {
         props: {
           game: "Trifecta",
           correct: true, // or false based on your logic
-          round: "two-color-flags", // optional
+          // optional
         },
       });
 
@@ -77,6 +77,8 @@ const Trifecta = () => {
   return (
     <div className="trifecta-container">
       <h2 className="trifecta-heading">{currentRound.title}</h2>
+      <h2 className="trifecta-clue">{currentRound.clue}</h2>
+      
       <div className="trifecta-board">
         {currentRound.tiles.map((flag, index) => (
           <div

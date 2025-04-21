@@ -10,7 +10,7 @@
 
 .trifecta-tile {
     width: 90px;
-    height: 90px;
+    height: 65px;
     border: 2px solid #fff;
     border-radius: 10px;
     background-color: #1a1a2e;
@@ -20,19 +20,48 @@
     cursor: grab;
 }
 
+.trifecta-clue {
+    text-align: center;
+    animation: pulse 2s infinite;
+
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .trifecta-clue {
+        text-align: left;
+    
+    }
+    
+}
+
+
 .trifecta-tile img {
-    width: 80%;
+    width: 100%;
     height: auto;
     pointer-events: none;
 }
 
 .selected {
-    border: 2px solid #00f0ff;
+    border: 3px solid #00f0ff;
     box-shadow: 0 0 10px #00f0ff;
 }
 
 .submit-button {
-    margin-top: 15px;
     padding: 10px 20px;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #6a11cb, #2575fc);
@@ -40,8 +69,9 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 20px auto;
     display: block;
-    margin: auto;
+
 }
 
 .result-message {
